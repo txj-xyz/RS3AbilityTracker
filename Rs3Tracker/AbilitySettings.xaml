@@ -115,7 +115,7 @@
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Grid.Row="3"
-                        Margin="10,10,10,147" Height="82">
+                        Margin="10,41,10,116" Height="82">
                 <ComboBox x:Name="Images"
                           SelectionChanged="Images_SelectionChanged"/>
                 <Image x:Name="imgAbil"
