@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rs3Tracker"
         mc:Ignorable="d"
-        Title="AbilitySettings"
+        Title="Ability Settings"
         Height="450"
         Width="800"
         Icon="radar.png">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="61*"></ColumnDefinition>
+            <ColumnDefinition Width="456*"/>
             <ColumnDefinition Width="275"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition>
                 </RowDefinition>
@@ -40,12 +41,12 @@
                     <DataGridTextColumn x:Name="Name"
                                         Header="Name"
                                         Binding="{Binding name}" />
-                    <DataGridTextColumn x:Name="CoolDown"
-                                        Header="CoolDown"
+                    <DataGridTextColumn x:Name="Cooldown"
+                                        Header="Cooldown"
                                         Binding="{Binding cooldown}" />
                     <DataGridTextColumn x:Name="Image"
-                                        Header="ImagePath"
-                                        Binding="{Binding img}" />                  
+                                        Header="Image Path"
+                                        Binding="{Binding img}" />
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Orientation="Horizontal"
@@ -58,31 +59,34 @@
                         Margin="10"
                         Click="btnSave_Click" />
                 <Button x:Name="btnDelete"
-                        Content="Delete"
+                        Content="Delete Selected"
                         Height="30"
                         Width="100"
                         Margin="10"
                         Click="btnDelete_Click" />
                 <Button x:Name="Import"
-                        Content="Import"
+                        Content="Import from Wiki"
                         Height="30"
                         Width="100"
                         Margin="10"
                         Click="Import_Click" />
+                <Button x:Name="reloadCombo"
+                        Click="reloadCombo_Click"
+                        Height="30"
+                        Margin="10" Content="Detect New Abilities"/>
             </StackPanel>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        Grid.Row="0"
-                        Width="275">
+                        Grid.Row="0" Height="50">
                 <TextBlock VerticalAlignment="Center"
                            Margin="10">Name</TextBlock>
                 <TextBox x:Name="txtAbilName"
@@ -92,15 +96,15 @@
                          VerticalAlignment="Center"
                          HorizontalAlignment="Left"
                          VerticalContentAlignment="Center"
-                         HorizontalContentAlignment="Center"></TextBox>
+                         HorizontalContentAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        Grid.Row="1">
+                        Grid.Row="1" Height="50">
                 <TextBlock VerticalAlignment="Center"
-                           Margin="10">CoolDown (S)</TextBlock>
+                           Margin="10">Cooldown (seconds)</TextBlock>
                 <TextBox x:Name="txtCooldDown"
-                         Width="150"
+                         Width="126"
                          Height="30"
                          Margin="10"
                          VerticalAlignment="Center"
@@ -111,26 +115,20 @@
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Grid.Row="3"
-                        Margin="10">
-                <Button x:Name="reloadCombo"
-                        Click="reloadCombo_Click"
-                        Height="50"
-                        Width="200"
-                        Margin="5">Reload</Button>
+                        Margin="10,10,10,147" Height="82">
                 <ComboBox x:Name="Images"
-                          SelectionChanged="Images_SelectionChanged"></ComboBox>
+                          SelectionChanged="Images_SelectionChanged"/>
                 <Image x:Name="imgAbil"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Height="60"
-                       Width="60"></Image>
+                       Width="60" Margin="98,0,97,0"/>
+
             </StackPanel>
             <Button x:Name="btnAdd"
-                    Grid.Row="4"
+                    Grid.Row="3"
                     Content="Add"
-                    Height="40"
-                    Width="200"
-                    Click="btnAdd_Click"></Button>
+                    Click="btnAdd_Click" Margin="38,175,37,24"/>
         </Grid>
 
     </Grid>
