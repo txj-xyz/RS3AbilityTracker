@@ -40,7 +40,7 @@
                         Height="40"
                         Width="150"
                         Click="btnSave_Click"
-                        Content="SAVE BARS" />
+                        Content="Save Bars" />
                 <Button x:Name="btnDelete"
                         Margin="10"
                         Height="40"
@@ -53,7 +53,7 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <Label VerticalContentAlignment="Center"
-                           Height="50">Name</Label>
+                           Height="50" >Name</Label>
                     <TextBox x:Name="txtBarName"
                              VerticalContentAlignment="Center"
                              Height="50"
@@ -66,6 +66,7 @@
                         Click="btnAdd_Click">Add Bar</Button>
                 <TextBlock>NAME: CLEAR</TextBlock>
                 <TextBlock>As a keybind it will clear the bar!</TextBlock>
+                <TextBlock></TextBlock>
                 <TextBlock>NAME: Pause</TextBlock>
                 <TextBlock>As a keybind it will pause the display!</TextBlock>
             </StackPanel>
