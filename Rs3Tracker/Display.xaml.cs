@@ -269,11 +269,15 @@ namespace Rs3Tracker {
                     if (imgCounter < 9)
                         imgCounter++;
                 }
-                var listBarChange = keybindBarClasses.Where(p => p.key.ToLower().Equals(e.Key.ToString().ToLower()) && p.modifier.ToLower().Equals(modifier.ToLower()) && (p.bar.name.ToLower().Equals(style.ToLower()) || p.bar.name.Equals("ALL"))).Select(p => p).FirstOrDefault();
-                if (listBarChange != null) {
-                    style = listBarChange.name;
-                    TESTLABEL.Content = style;
-                    changeStyle();
+                if(keybindBarClasses != null )
+                {
+                    var listBarChange = keybindBarClasses.Where(p => p.key.ToLower().Equals(e.Key.ToString().ToLower()) && p.modifier.ToLower().Equals(modifier.ToLower()) && (p.bar.name.ToLower().Equals(style.ToLower()) || p.bar.name.Equals("ALL"))).Select(p => p).FirstOrDefault();
+                    if (listBarChange != null)
+                    {
+                        style = listBarChange.name;
+                        TESTLABEL.Content = style;
+                        changeStyle();
+                    }
                 }
                 control = false;
 
